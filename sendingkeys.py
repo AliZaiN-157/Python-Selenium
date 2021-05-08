@@ -30,4 +30,4 @@ total_sum = driver.find_element_by_css_selector(
     'button[onclick="return total()"]')
 total_sum.click()
 
-# Css selectors You can use
+# There are tons Css selectors You can use
