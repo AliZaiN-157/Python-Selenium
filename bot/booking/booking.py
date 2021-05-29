@@ -1,3 +1,4 @@
+from booking.booking_report import BookingReport
 from booking.booking_filtration import BookingFiltration
 import booking.constants as const
 import os
@@ -89,3 +90,10 @@ class Booking(webdriver.Chrome):
         filtration.apply_star_rating(4, 5)
 
         filtration.sort_price_lowest_first()
+
+    def report_results(self):
+        hotel_boxes = self.find_element_by_id(
+            'hotellist_inner'
+        )
+        report = BookingReport(hotel_boxes)
+        report.pull_titles()
